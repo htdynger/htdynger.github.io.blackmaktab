@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FiveNightsAtFreddy</title>
+	<style type="text/css">
+		* {
+			font-family: fantasy;
+			padding: 0px;
+			margin: 0px;
+		}
+		html {
+			background-image: url(images/error.jpg);
+			background-attachment: fixed;
+			
+			background-size: 200%;
+			
+		}
+		
+		body {
+			min-height: 1000px;
+			overflow: hidden;
+
+
+/*			 Высота, 164.9 мм. Ширина, 77 мм*/
+
+			
+		}
+		.selected {
+			color:#ff0000;
+		}
+		.startBackground {
+			background-image: url(images/startBackground__5.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;	
+
+		}
+		.standartBackground {
+			background-image: url(images/background__1.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+		}
+		.loseBackground {
+			background-image: url(images/zeroenergybackground.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.playBtn {
+			height: 10px;
+			display: flex;
+			color: #fff;
+			font-size: 46px;
+			align-items: flex-end;
+			justify-content: center;
+			cursor: pointer;
+			width: 1;
+			
+		}
+		.visibleBtnNight{
+			
+			cursor: pointer;
+			color: #fff;
+			font-size: 24px;
+			
+			justify-content: center;
+		}
+		.none {
+			display: none;
+		}
+		.nightsNumber {
+			color: #fff;
+			display: flex;
+			align-items: center;
+			height: 300px;
+			justify-content: space-between;
+			font-size: 24px;
+			
+		}
+		.leftLockOpenDoor, .rightLockOpenDoor,.camera {
+			margin: 32px;
+			font-size: 24px;
+			text-shadow: 2px 2px 2px #000;
+			
+			cursor: pointer;
+		}
+		.btnNightFirst,.btnNightSecond,.btnNightThird {
+/*			margin: 8px;*/
+		}
+
+
+		.colorWhite {
+			color: #fff;
+		}
+		.colorRed {
+			color: #f00;
+		}
+		.colorGreen {
+			color: #0f0;
+		}
+		.doorsLockOpenMain {
+			
+			align-items: flex-end;
+			height: 400px;
+			justify-content: space-between;
+
+		}
+		.time, .energy {
+			margin: 32px;
+			font-size: 24pxr;
+			text-shadow: 2px 2px 2px #000;
+			color: #FFF;
+		}
+		.flex {
+			display: flex;
+		}
+		.timeAndEnergy {
+			
+			align-items: flex-start;
+			height: 100px;
+			justify-content: space-between;
+		}
+		.name {
+			color: #fff;
+			font-size: 32px;
+			position: absolute;
+
+		}
+		.center {
+			display: block;
+
+		}
+		.cameraBackground {
+			background: #333;
+		}
+		.block {
+			display: block;
+		}
+		.camera {
+			display: flex;
+			justify-content: center;
+			
+		}
+		.cam {
+			color: #fff;
+			font-size: 20px;
+			cursor: pointer;
+
+
+		}
+		.you {
+			color: #fff;
+			font-size: 24px;
+			cursor: default;
+		}
+		.mainCamera1, .mainCamera2 {
+			justify-content:space-between;
+			flex-direction: row;
+			max-width: 100vh;
+			height: 100px;
+			/*margin-top: 50px;
+			margin-bottom: 50px;*/
+			flex-wrap: wrap;
+			align-items: center;
+			
+		}
+		.mainCamera3 {
+			justify-content:space-between;
+			flex-direction: row;
+			max-width: 100vh;
+			height: 100px;
+			/*margin-top: 50px;
+			margin-bottom: 50px;*/
+			flex-wrap: wrap;
+			align-items: center;
+
+		}
+		.backgroundCam__1 {
+			background-image: url(back/back__1.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.backgroundCam__2 {
+			background-image: url(back/back__2.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.backgroundCam__3 {
+			background-image: url(back/back__3.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.backgroundCam__4 {
+			background-image: url(back/back__4.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+		.backgroundCam__5 {
+			background-image: url(back/back__5.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.backgroundCam__6 {
+			background-image: url(back/back__6.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.backgroundCam__7 {
+			background-image: url(back/back__7.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.backgroundCam__8 {
+			background-image: url(back/back__8.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+
+		.chorshanbaBackgroundCam__1 {
+			background-image: url(chorshanba/back__1.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaBackgroundCam__2 {
+			background-image: url(chorshanba/back__2.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaBackgroundCam__3 {
+			background-image: url(chorshanba/back__3.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaBackgroundCam__4 {
+			background-image: url(chorshanba/back__4.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaBackgroundCam__5 {
+			background-image: url(chorshanba/back__5.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaBackgroundCam__6 {
+			background-image: url(chorshanba/back__6.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaBackgroundCam__7 {
+			background-image: url(chorshanba/back__7.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaBackgroundCam__8 {
+			background-image: url(chorshanba/back__8.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+
+
+		.shibyaqqqovBackgroundCam__1 {
+			background-image: url(shibyaqqqov/back__1.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.shibyaqqqovBackgroundCam__2 {
+			background-image: url(shibyaqqqov/back__2.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.shibyaqqqovBackgroundCam__3 {
+			background-image: url(shibyaqqqov/back__3.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.shibyaqqqovBackgroundCam__4 {
+			background-image: url(shibyaqqqov/back__4.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.shibyaqqqovBackgroundCam__5 {
+			background-image: url(shibyaqqqov/back__5.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.shibyaqqqovBackgroundCam__6 {
+			background-image: url(shibyaqqqov/back__6.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.shibyaqqqovBackgroundCam__7 {
+			background-image: url(shibyaqqqov/back__7.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.shibyaqqqovBackgroundCam__8 {
+			background-image: url(shibyaqqqov/back__8.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+
+
+		.doubleBackgroundCam__1 {
+			background-image: url(double/back__1.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+		.doubleBackgroundCam__2 {
+			background-image: url(double/back__2.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+
+		.doubleBackgroundCam__3 {
+			background-image: url(double/back__3.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+
+		.doubleBackgroundCam__4 {
+			background-image: url(double/back__4.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+
+		.doubleBackgroundCam__5 {
+			background-image: url(double/back__5.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+
+		.doubleBackgroundCam__6 {
+			background-image: url(double/back__6.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+
+		.doubleBackgroundCam__7 {
+			background-image: url(double/back__7.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+
+		.doubleBackgroundCam__8 {
+			background-image: url(double/back__8.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+
+		}
+
+		.mainGame {
+			overflow: hidden;
+		}
+
+
+		.scrimerPicture {
+			
+			
+			
+
+		}
+		.scrimer {
+			position: absolute;
+			z-index: 0;
+			height: 100%;
+			width: 100%;
+			justify-content: center;
+		}
+
+
+		.shibyaqqqovScrimer {
+			height: 450px;
+			background-image: url(scrimers/shibyaqqqov.png);
+			background-size: 100%;
+			width: 200px;
+			background-repeat: no-repeat;
+		}
+		.chorshanbaScrimer {
+			height: 450px;
+			background-image: url(scrimers/chorshanba.png);
+			background-size: 100%;
+			width: 200px;
+			background-repeat: no-repeat;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="name">
+		<pre>
+
+
+	Five
+	Nights
+	at	
+	Shibyaqqq'ov
+
+
+	<h1 class="playBtn">Play</h1></pre>
+
+	
+	</div>
+	
+	<div class="nightsNumber nightsNumberId">
+		<div class="btnNightFirst none">Night 1</div>
+		<div class="btnNightSecond none">Night 2</div>
+		<div class="btnNightThird none">Night 3</div>
+	</div>
+
+
+	<div class="mainGame none">
+		<div class="timeAndEnergy flex">
+			<div class="time"> TIME: 00:00</div>
+			<div class="energy">ENERGY:100%</div>
+		</div>
+
+		<div class="scrimer none"> 
+			<div class="scrimerPicture"></div>
+		</div>
+
+		<div class="doorsLockOpenMain flex">
+			<div class="leftLockOpenDoor colorRed">LOCK</div>
+			<div class="rightLockOpenDoor colorRed">LOCK</div>
+		</div>
+		<div class="camera colorWhite">CAMERA</div>
+
+	</div>
+
+	<div class="mainCamera1 none">
+		<div class="cam1 cam">CAMERA 01</div> 
+		<div class="cam2 cam">CAMERA 02</div> 
+		<div class="cam3 cam">CAMERA 03</div> 
+		
+	</div>
+	<div class="mainCamera2 none"> 
+
+		<div class="cam4 cam">CAMERA 04</div>
+		<div class="cam5 cam">CAMERA 05</div>
+		<div class="cam6 cam">CAMERA 06</div>
+	</div>
+	<div class="mainCamera3 none"> 
+
+		<div class="cam7 cam">CAMERA 07</div>
+		<div class="player you none"> YOU</div>
+		<div class="cam8 cam">CAMERA 08</div>
+	</div>
+		
+	
+
+
+</body>
+
+<script src="main.js"></script>
+</html>
