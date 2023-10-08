@@ -68,7 +68,7 @@ if (ThisIsPhone === true) {
 }
 
 menuButtonPlay.addEventListener('click', ()=>{
-    // menuMain.requestFullscreen()
+    menuMain.requestFullscreen()
     removeContent(menuMain, 'flex')
     addContent(buttons, 'flex') 
 
