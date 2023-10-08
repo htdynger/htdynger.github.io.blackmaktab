@@ -3,6 +3,8 @@ const menuMain = document.querySelector('.main-menu')
 const predict = document.querySelector('.predict')
 const buttons = document.querySelector('.buttons')
 
+const fullScreen = document.querySelector('.full-screen')
+
 const leftButton = document.querySelector('.buttons__button-left')
 const rightButton = document.querySelector('.buttons__button-right')
 
@@ -68,7 +70,7 @@ if (ThisIsPhone === true) {
 }
 
 menuButtonPlay.addEventListener('click', ()=>{
-    menuMain.requestFullscreen()
+    fullScreen.requestFullscreen()
     removeContent(menuMain, 'flex')
     addContent(buttons, 'flex') 
 
