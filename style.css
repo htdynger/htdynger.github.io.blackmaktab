@@ -1,0 +1,527 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+
+.flex {
+    display: flex;
+
+}
+
+.none {
+    display: none;
+}
+.inline {
+    display: inline;
+}
+
+
+@media (max-width: 4000px) {
+    .game-menu {
+        z-index: 1;
+        background-image: url(images/backgrounds/background-game.webp);
+        background-position: center;
+        background-size: cover;
+        
+        position: absolute;
+        height: 100vh;  
+        width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .game-menu div {
+        /* background-color: #a00; */
+        height: 100vh;
+        padding-left: 64px;
+        padding-right: 64px;
+        opacity: 100%;
+    }
+    .main-menu {
+       
+        justify-content: center;
+        align-items:center;
+        width: 100vw;
+        height: 100vh; 
+        z-index: 3;
+        background-color: #222; 
+        position: absolute;
+    
+    }
+    
+    .buttons {
+        z-index: 1;
+        position: absolute;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100vw;
+        height: 100vh;
+        
+        
+    }
+    .buttons img {
+        width: 96px;
+        z-index: 4;
+        margin: 32px;
+        opacity: 60%;
+    }
+    
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) and (min-width: 550px) {
+
+
+    .buttonLevel_0 {
+        animation-name: buttonLevel_0;
+        animation-duration: 1000ms;
+        animation-delay: 0ms;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes buttonLevel_0 {
+        0% {
+            margin-bottom: 24px;
+        } 50% {
+             margin-bottom: 48px;
+        } 100% {
+            margin-bottom: 24px;
+        }
+    }
+
+    .buttonLevel_1 {
+        animation-name: buttonLevel_1;
+        animation-duration: 750ms;
+        animation-delay: 0ms;
+        animation-iteration-count: infinite;
+    }
+    .order_1 {
+        order: 1;
+    }
+    .order_2 {
+        order: 2;
+    }
+
+    .opacity {
+        opacity: 18%;
+    }
+
+    
+
+    @keyframes buttonLevel_1 {
+        0% {
+            margin-bottom: 24px;
+        } 50% {
+             margin-bottom: 96px;
+        } 100% {
+            margin-bottom: 24px;
+        }
+    }
+
+    .buttonLevel_2 {
+        animation-name: buttonLevel_2;
+        animation-duration: 600ms;
+        animation-delay: 0ms;
+        animation-iteration-count: infinite;
+    }
+    h2 {
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+    @keyframes buttonLevel_2 {
+        0% {
+            margin-bottom: 24px;
+            margin-left: 24px;
+            margin-right: 24px;
+
+           
+        } 50% {
+             margin-bottom: 150px;
+             margin-right: 64px;
+             margin-left: 64px;
+             
+            
+        } 100% {
+            margin-bottom: 24px;
+            margin-left: 24px;
+            margin-right: 24px;
+            
+           
+        }
+    }
+
+
+    .buttonLevel_3 {
+        animation-name: buttonLevel_3;
+        animation-duration: 350ms;
+        animation-delay: 0ms;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes buttonLevel_3 {
+        0% {
+            margin-bottom: 24px;
+            margin-left: 24px;
+            margin-right: 24px;
+
+           
+        } 50% {
+             margin-bottom: 150px;
+             margin-right: 64px;
+             margin-left: 64px;
+             
+            
+        } 100% {
+            margin-bottom: 24px;
+            margin-left: 24px;
+            margin-right: 24px;
+            
+           
+        }
+    }
+
+
+
+
+    .buttons img {
+        width: 64px;
+        z-index: 4;
+        margin: 24px;
+        opacity: 60%;
+        position: relative;
+    }
+
+
+
+
+
+    .main-menu__button, .main-menu__button-skins, .main-menu__button-stats {
+        color: transparent;
+        -webkit-text-stroke: 2px #000;
+        font-size: 48px;
+      
+    }
+    .main-menu__logo {
+        font-size: 58px;
+        margin-bottom:24px;
+        color: transparent;
+        -webkit-text-stroke: 3px #000;
+        
+        
+        
+    }
+    .main-menu__button, .main-menu__button-skins, .main-menu__button-stats {
+        margin-bottom: 24px;
+        
+    }
+    .main-menu__logo:after {
+        display: flex;
+        position: absolute;
+        left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+        width: 100%;/*задаём длинну линии до наведения курсора*/
+        height: 3px; /*задаём ширину линии*/
+        background-color: #000; /*задаём цвет линии*/
+        content: "";
+        
+    }
+    .main-menu__logo:before {
+        display: flex;
+        position: absolute;
+        left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+        width: 100%;/*задаём длинну линии до наведения курсора*/
+        height: 3px; /*задаём ширину линии*/
+        background-color: #000; /*задаём цвет линии*/
+        content: "";
+        
+    }
+    .icon {
+        width: 40px;
+        height: 32px;
+    }
+    .icon-stats  {
+        filter: drop-shadow(0 0 2px rgb(200, 255, 0));
+       
+    }
+    .icon-play {
+        filter: drop-shadow(0 0 2px rgb(255, 0, 0));
+    }
+    .icon-skins {
+        filter: drop-shadow(0 0 2px rgb(0, 255, 64));
+    }
+    .icon-back {
+        filter: drop-shadow(0 0 2px rgb(0, 0, 0));
+        height: 55%;
+    }
+
+    .main-menu__button {
+        text-shadow: 0 0 1px rgb(122, 0, 0) ;
+    }
+    .main-menu__button-skins {
+        text-shadow:0 0 2px rgb(0, 122, 12) ;
+    }
+    .main-menu__button-stats {
+        text-shadow: 0 0 2px rgb(140, 122, 0);
+    }
+    .menu-skins__icon {
+        width: 100px;
+        height: 100px;
+        
+    }
+    .menu-skins__skin_0,.menu-skins__skin_1 {
+        color: #000;
+    }
+    .menu-skins__container {
+        display: inline;
+        width: 100px;
+        height: 100px;
+    }
+
+    .select {
+        border: 3px solid #0f0 ;
+
+    }
+    .release {
+        border: 3px solid #f00;
+    }
+
+    .menu-skins__button-back,.menu-stats__button-back {
+        margin-top: 16px;
+        font-size: 56px;
+        border: 2px solid #000;
+        border-radius: 4px;
+        padding: 4px;
+        color: transparent;
+        -webkit-text-stroke: 2px #000; 
+        animation-name: buttonBackAnimation;
+        animation-duration: 8000ms;
+        animation-delay: 0ms;
+        animation-iteration-count: infinite;
+
+    }
+    @keyframes buttonBackAnimation {
+        0%{
+            border-radius: 4px;
+            border: #000 solid 2px;
+            padding: 4px;
+        } 50% {
+            border-radius: 50px;
+            border: #000 solid 3px;
+            padding: 8px;
+        } 100% {
+            border-radius: 4px;
+            border: #000 solid 2px;
+            padding: 4px;
+        }
+        
+    }
+    
+    
+
+
+
+
+    .menu-skins {
+        z-index: 10;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: #222;
+        font-size: 32px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu-stats {
+        z-index: 10;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: #222;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        font-size: 32px;
+    }
+
+
+    .start-screen {
+        z-index: 4;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: #222;
+        color: transparent;
+        align-items: center;
+        justify-content: center;
+
+        -webkit-text-stroke: 3px #000;
+        font-size: 48px;
+        text-align: center;
+        
+    }
+
+
+
+    .enemy {
+        
+        margin-bottom: 100vh;
+    }
+    .enemy-animation {
+        animation-name: enemy_falling;
+        animation-duration: 1350ms;
+        animation-delay: 0ms;
+        animation-iteration-count: 1;
+    }
+   
+
+    @keyframes enemy_falling {
+        0% { 
+            margin-bottom: 100vh;
+            
+        }
+        100% { margin-bottom: 15vh; }
+    }
+    .player {
+        position: absolute;
+        filter: drop-shadow(0 0 10px rgba(0,0,0,1));
+    }
+    .game-menu img {
+        width: 100px;
+        height: 100px;
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .game-header {
+        z-index: 2;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        height: 10vh;
+    }
+    .game-menu {
+        z-index: 1;
+        background-image: url(images/backgrounds/background-game.webp);
+        background-position: center;
+        background-size: cover;
+        
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .game-menu div {
+        /* background-color: #a00; */
+        height: 100vh;
+        
+        opacity: 100%;
+    }
+    .main-menu {
+       
+        justify-content: center;
+        align-items:center;
+        width: 100vw;
+        height: 100vh; 
+        z-index: 3;
+        background-color: #222; 
+        position: absolute;
+        flex-direction: column;
+    
+    }
+    
+    .buttons {
+        z-index: 1;
+        position: absolute;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100vw;
+        height: 100vh;
+        
+        
+    }
+
+
+    .menu-stats__image {
+        width: 200px;
+        height: 200px;
+        filter: drop-shadow(0 0 10px rgba(0,0,0,1));
+        padding: 8px;
+    }
+
+    .win-menu {
+        z-index: 10;
+        background-color: #555;
+        
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .win-menu__image {
+        width: 200px;
+        height: 200px;
+    }
+    .win-menu__text {
+        font-size: 48px;
+    }
+    
+}
+
+
+@media (max-width: 500px) {
+    
+
+    .start-screen {
+        z-index: 4;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: #222;
+        color: transparent;
+        align-items: center;
+        justify-content: center;
+
+        -webkit-text-stroke: 3px #000;
+        font-size: 48px;
+        text-align: center;
+        
+        
+        
+    }
+    
+}
+
