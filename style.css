@@ -4,6 +4,9 @@
     font-family: sans-serif;
     overflow: hidden;
 }
+body {
+        transform: rotate(90deg) !important;
+}
 
 
 .flex {
@@ -90,9 +93,7 @@
 
 
 
-    body {
-        transform: rotate(90deg);
-    }
+    
 
 
     .buttonLevel_0 {
