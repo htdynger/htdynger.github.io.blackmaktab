@@ -90,7 +90,9 @@
 
 
 
-@media (max-width: 1800px) and (min-width: 350px) {
+    body {
+        transform: rotate(90deg);
+    }
 
 
     .buttonLevel_0 {
@@ -499,7 +501,7 @@
         font-size: 48px;
     }
     
-}
+
 
 
 @media (max-width: 500px) {
