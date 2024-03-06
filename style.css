@@ -4,9 +4,7 @@
     font-family: sans-serif;
     overflow: hidden;
 }
-body {
-        transform: rotate(90deg) !important;
-}
+
 
 
 .flex {
